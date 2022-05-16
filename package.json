@@ -1,7 +1,16 @@
 {
   "name": "mk-js-utils",
   "version": "0.1.0",
-  "type": "module",
-  "main":"index.js",
-  "private": true
+  "private": true,
+  "exports": {
+    "types": "./lib/index.d.ts",
+    "require": "./lib/index.js",
+    "import": "./lib/esm/index.js"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.build-cjs.json && tsc --project tsconfig.build-mjs.json"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
 }
